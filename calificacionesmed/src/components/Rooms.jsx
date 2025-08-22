@@ -5,7 +5,7 @@ export default function Rooms({ onSelectRoom }) {
   const [rooms, setRooms] = useState([]);
 
   useEffect(() => {
-    fetch("/api/rooms")
+    fetch("/rooms")
       .then((res) => res.json())
       .then((data) => setRooms(data))
       .catch((err) => console.error(err));

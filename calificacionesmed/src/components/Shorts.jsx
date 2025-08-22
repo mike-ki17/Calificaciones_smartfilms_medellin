@@ -9,7 +9,7 @@ export default function Shorts({ roomId }) {
 
   // Traer shorts y estadísticas
 const fetchShorts = () => {
-  fetch(`/api/rooms/${roomId}/shorts`)
+  fetch(`/rooms/${roomId}/shorts`)
     .then(res => res.json())
     .then(data => {
       // Validamos qué shorts ya tienen calificación
@@ -38,7 +38,7 @@ const fetchShorts = () => {
   // Manejo de calificación
   const handleRate = async (shortId, ratingValue) => {
     try {
-      await fetch(`/api/rooms/rating`, {
+      await fetch(`/rooms/rating`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ shortId, rating: ratingValue })
