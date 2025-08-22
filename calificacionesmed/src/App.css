@@ -1,0 +1,464 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+
+/*Rooms*/
+
+.rooms-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.room-btn {
+  padding: 0.6rem 1.5rem;
+  background-color: #1D4ED8; /* azul profesional */
+  color: #fff;
+  font-weight: 600;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.room-btn:hover {
+  background-color: #2563EB;
+  transform: translateY(-2px);
+}
+
+.room-btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.5);
+}
+
+
+/*Shorts*/
+/* Botón adicional */
+.range-btn {
+  margin-left: 0.5rem;
+  padding: 0.4rem 0.8rem;
+  background-color: #F59E0B; /* amarillo oscuro */
+  border: none;
+  border-radius: 0.375rem;
+  font-weight: 600;
+  cursor: pointer;
+  color: #1F2937;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.range-btn:hover {
+  background-color: #FFD700;
+  transform: translateY(-1px);
+}
+
+/* Modal overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Modal box */
+.modal {
+  background-color: #1F2937; /* gris oscuro */
+  padding: 2rem;
+  border-radius: 0.75rem;
+  width: 90%;
+  max-width: 400px;
+  color: #F9FAFB;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.5);
+  text-align: center;
+}
+
+/* Input range */
+.modal input[type="range"] {
+  width: 100%;
+  margin: 1rem 0;
+}
+
+/* Botones del modal */
+.modal button {
+  margin: 0.5rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.modal button:first-of-type {
+  background-color: #FFD700;
+  color: #1F2937;
+}
+
+.modal button:first-of-type:hover {
+  background-color: #F59E0B;
+  transform: translateY(-1px);
+}
+
+.close-btn {
+  background-color: #EF4444;
+  color: #fff;
+}
+
+.close-btn:hover {
+  background-color: #B91C1C;
+}
+
+/* Tarjeta marcada como calificada */
+.short-card.rated {
+  border-left-color: #10B981; /* verde brillante para calificado */
+  opacity: 0.9;
+}
+
+/* Texto de calificación actual */
+.current-rating {
+  font-weight: 600;
+  color: #10B981; /* verde */
+  margin-top: 0.5rem;
+}
+
+.range-btn {
+  margin-left: 0.5rem;
+  padding: 0.4rem 0.8rem;
+  background-color: #F59E0B; /* amarillo oscuro */
+  border: none;
+  border-radius: 0.375rem;
+  font-weight: 600;
+  cursor: pointer;
+  color: #1F2937;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.range-btn:hover {
+  background-color: #FFD700;
+  transform: translateY(-1px);
+}
+
+
+/* Estrellas */
+.stars-container {
+  display: flex;
+  justify-content: center;
+  gap: 0.25rem;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.star {
+  color: #6B7280; /* gris oscuro para no llenas */
+  transition: color 0.2s ease;
+}
+
+.star.filled {
+  color: #FFD700; /* amarillo */
+}
+
+/* Modal overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Modal box */
+.modal {
+  background-color: #1F2937;
+  padding: 2rem;
+  border-radius: 0.75rem;
+  width: 90%;
+  max-width: 400px;
+  color: #F9FAFB;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.5);
+  text-align: center;
+}
+
+/* Range input */
+.modal input[type="range"] {
+  width: 100%;
+  margin: 1rem 0;
+}
+
+/* Botones del modal */
+.modal button {
+  margin: 0.5rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.modal button:first-of-type {
+  background-color: #FFD700;
+  color: #1F2937;
+}
+
+.modal button:first-of-type:hover {
+  background-color: #F59E0B;
+  transform: translateY(-1px);
+}
+
+.close-btn {
+  background-color: #EF4444;
+  color: #fff;
+}
+
+.close-btn:hover {
+  background-color: #B91C1C;
+}
+
+/* Contenedor general */
+.shorts-container {
+  margin-top: 2rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #F9FAFB;
+}
+
+/* Título principal */
+.shorts-container h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #FFD700;
+  margin-bottom: 1.5rem;
+}
+
+/* Grid de tarjetas */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Tarjetas individuales */
+.short-card {
+  background-color: #1F2937;
+  border-radius: 1rem;
+  padding: 1.25rem 1.5rem;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.short-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.6);
+}
+
+/* Header de la tarjeta */
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.card-header h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #FFD700;
+}
+
+.badge {
+  background-color: #10B981;
+  color: #fff;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+/* Director y descripción */
+.director {
+  font-style: italic;
+  color: #D1D5DB;
+  margin-bottom: 0.5rem;
+}
+
+.description {
+  flex-grow: 1;
+  color: #E5E7EB;
+  margin-bottom: 1rem;
+}
+
+/* Botones de tarjeta */
+.card-actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.range-btn {
+  padding: 0.5rem 1rem;
+  background-color: #F59E0B;
+  border: none;
+  border-radius: 0.5rem;
+  color: #1F2937;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.range-btn:hover {
+  background-color: #FFD700;
+  transform: translateY(-1px);
+}
+
+/* Modal y estrellas */
+.modal-overlay {
+  position: fixed;
+  top:0; left:0; width:100%; height:100%;
+  background-color: rgba(0,0,0,0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal {
+  background-color: #1F2937;
+  padding: 2rem;
+  border-radius: 1rem;
+  width: 90%;
+  max-width: 450px;
+  color: #F9FAFB;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.6);
+}
+
+.stars-container {
+  display: flex;
+  justify-content: center;
+  gap: 0.2rem;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.star {
+  color: #6B7280;
+  transition: color 0.2s ease;
+}
+
+.star.filled {
+  color: #FFD700;
+}
+
+.modal input[type="range"] {
+  width: 100%;
+  margin: 1rem 0;
+}
+
+.modal button {
+  margin: 0.5rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.modal button:first-of-type {
+  background-color: #FFD700;
+  color: #1F2937;
+}
+
+.modal button:first-of-type:hover {
+  background-color: #F59E0B;
+  transform: translateY(-1px);
+}
+
+.close-btn {
+  background-color: #EF4444;
+  color: #fff;
+}
+
+.close-btn:hover {
+  background-color: #B91C1C;
+}
+
+.stats-bar {
+  display: flex;
+  justify-content: space-around;
+  background-color: #111827;
+  padding: 1rem 1.5rem;
+  border-radius: 1rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.5);
+}
+
+.stat p {
+  margin: 0;
+  font-size: 0.875rem;
+  color: #D1D5DB;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.stat span {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #FFD700;
+  margin-top: 0.25rem;
+  text-align: center;
+}
