@@ -5,11 +5,11 @@ export default function Stats() {
   const [byRoom, setByRoom] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:5000/shorts/pending/total')
+    fetch('/api/shorts/pending/total')
       .then(res => res.json())
       .then(data => setTotal(data.total_pending));
 
-    fetch('http://localhost:5000/shorts/pending/by-room')
+    fetch('/api/shorts/pending/by-room')
       .then(res => res.json())
       .then(data => setByRoom(data));
   }, []);
